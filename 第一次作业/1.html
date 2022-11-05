@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            grid-template-rows: 150px 150px 150px 150px 150px;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px 10px;
+        }
+        .grid-container > div {
+        background-color:rgb(0, 255, 102);
+        text-align: center;
+        padding: 20px 20px;
+        font-size: 30px;
+        }
+        #t7{
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start:2 ;
+            grid-column-end:4 ;
+        }
+        #t9{
+            grid-row-start: 3;
+            grid-row-end: 5;
+            grid-column-start:4 ;
+            grid-column-end:6 ;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item" id="t1">1</div>
+        <div class="item" id="t2">2</div>
+        <div class="item" id="t3">3</div>  
+        <div class="item" id="t4">4</div>
+        <div class="item" id="t5">5</div>
+        <div class="item" id="t6">6</div>
+        <div class="item" id="t7">7</div>
+        <div class="item" id="t8">8</div>  
+        <div class="item" id="t9">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+        <div class="item">16</div>
+        <div class="item">17</div>
+        <div class="item">18</div>
+      </div>
+      <script>
+        var divs=document.getElementsByClassName("item");
+        
+        for(var i=0;i<18;i++)
+        {
+            var red=parseInt(Math.random()*255);
+            var green=parseInt(Math.random()*255);
+            var blue=parseInt(Math.random()*255);
+            var a="rgb("+red+","+green+","+blue+")";
+
+            divs[i].style.backgroundColor=a
+        }
+
+      </script>
+</body>
+</html>
