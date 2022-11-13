@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = new Array();
+        arr =[1,2,3,4,5];
+        //var arr =[1,2,3,4,5]   var arr = new Array(1,2,3,4,5)
+        for(var i=0;i<5;i++){
+            switch(arr[i]){
+                case 1:
+                    var arr1=arr.map(function(a){
+                        return a*1;
+                    });
+                    break;
+                case 2:
+                    var arr2=arr.map(function(a){
+                        return a*2;
+                    });
+                    break;
+                case 3:
+                    var arr3=arr.map(function(a){
+                        return a*3;
+                    });
+                    break;
+                case 4:
+                    var arr4=arr.map(function(a){
+                        return a*4;
+                    });
+                    break;
+                case 5:
+                    var arr5=arr.map(function(a){
+                        return a*5;
+                    });
+                    break;
+            }
+        }
+        console.log(arr);
+        console.log(arr1);
+        console.log(arr2);
+        console.log(arr3);
+        console.log(arr4);
+
+    </script>
+</body>
+</html>
