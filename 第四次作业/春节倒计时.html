@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #day{
+			color:red;
+			font-size:50px;
+            overflow: auto;
+            width: 1000px;
+		}
+
+        #time1{
+            float:right;
+        }
+        #time2{
+            float:right;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="day">
+    现在是：<div id="time1"></div><br>
+    距离2023年春节还有：<div id="time2"></div>
+    </div>
+    <script>
+        function cjdjs() {
+            var date2 = new Date("2023/1/22,00:00:00");
+            var date = new Date();
+            var str1,str2;
+            var lefttime=  parseInt((date2.getTime()-date.getTime())/1000);
+            str1 =date.getFullYear()+"-"+(date.getMonth()+1) +"-"+date.getDate()+"&nbsp"+full(date.getHours())+":"+full(date.getMinutes())+":"+full(date.getSeconds());
+            str2=parseInt(lefttime/(24*60*60))+"天"+parseInt(lefttime/(60*60)%24)+"时"+parseInt(lefttime/60%60)+"分"+parseInt(lefttime%60)+"秒";
+            document.getElementById("time1").innerHTML=str1;
+            document.getElementById("time2").innerHTML=str2;
+        }
+        function full(n){
+            if(n<10){
+                n="0"+n;
+            }
+            return n;
+        }
+        window.setInterval("cjdjs()",1000);
+    </script>
+</body>
+</html>
