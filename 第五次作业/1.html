@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #red{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-radius: 50% 50% 50% 50%;
+            background-color:red;
+        }
+        #yellow{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 250px;
+            left: 0px;
+            border-radius: 50% 50% 50% 50%;
+            background-color:yellow;
+        }
+        #blue{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 500px;
+            left: 0px;
+            border-radius: 50% 50% 50% 50%;
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="red"></div>
+    <div id="yellow"></div>
+    <div id="blue"></div>
+
+    <script>
+            window.onload = function(){
+                var box1 = document.getElementById('red');
+                var box2 = document.getElementById('yellow');
+                var box3 = document.getElementById('blue');
+                var left1 = 0;
+                var left2 = 0;
+                var left3 = 0;
+                function move1() {
+                    if(left1<500){
+                        left1 += 1;
+                        box1.style.left = left1 + 'px';
+                    }
+                }
+                function move2() {
+                    if(left2<500){
+                        left2 += 1;
+                        box2.style.left = left2 + 'px';
+                    }
+                }
+                function move3() {
+                    if(left3<500){
+                        left3 += 1;
+                        box3.style.left = left1 + 'px';
+                    }
+                }
+            /* setTimeout(function(){
+                    setInterval(move1,1);
+                },0);
+                setTimeout(function(){
+                    setInterval(move2,1);
+                },3000);
+                setTimeout(function(){
+                    setInterval(move3,1);
+                },6000);*/
+                
+                let p = new Promise((resolve, reject) => {
+                    setInterval(move1,1);
+                    resolve(1);
+                })
+                 .then((res) => {setInterval(move2,1);return res;;})
+                 .then((res) => setInterval(move3,1))
+
+
+            }
+
+    </script>
+</body>
+</html>
