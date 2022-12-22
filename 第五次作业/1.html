@@ -77,11 +77,33 @@
                 },6000);*/
                 
                 let p = new Promise((resolve, reject) => {
-                    setInterval(move1,1);
-                    resolve(1);
+                    sh=setInterval(function(){
+                    if(left1<500){
+                        left1 += 1;
+                        box1.style.left = left1 + 'px';
+                    }
+                    else{
+                        resolve("1");}},1)
+
                 })
-                 .then((res) => {setInterval(move2,1);return res;;})
-                 .then((res) => setInterval(move3,1))
+                 .then((res) => {
+                    clearInterval(sh); 
+                    sh1 = setInterval(function(){
+                    if(left2<500){
+                        left2 += 1;
+                        box2.style.left = left2 + 'px';
+                    }
+                    else{
+                        console.log(res);
+                        return("0");}},1)
+                })
+                 .then((res) => {clearInterval(sh1); 
+                    setInterval(function(){
+                    if(left3<500){
+                        left3 += 1;
+                        box3.style.left = left3 + 'px';
+                    }},1)
+                })
 
 
             }

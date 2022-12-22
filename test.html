@@ -16,8 +16,10 @@
 })
   .then(
     (data) => {
-      console.log(data);
-      return data;
+        setTimeout(() => {
+            console.log("执行完成");
+            return "好";
+        }, 2000);
       //此时输出data为resolve传入的参数
     },
     (error) => {
@@ -27,7 +29,7 @@
   )
   .then((data) => {
     console.log(data);
-    return data;
+    return "0";
     //好耶
   })
   .then((data) => {
